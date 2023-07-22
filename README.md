@@ -35,3 +35,35 @@ go test ./...
 ```bash
 mockgen -destination=application/mocks/application.go -source=application/product.go application/
 ```
+
+### para instalar o sqlite3
+
+```bash
+docker exec -it -u 0 7dc4206ab790 bash # consegui sudo assim
+apt-get update
+apt-get install sqlite3
+```
+
+### para criar o banco sqlite3
+
+```bash
+touch sqlite.db
+```
+
+### para acessar o banco sqlite3
+
+```bash
+sqlite3 sqlite.db
+```
+
+### para criar uma tabela no banco sqlite3
+
+```sql
+create table products(id string, name string, price float, status string);
+```
+
+### para listar tabelas no banco sqlite3
+
+```bash
+.tables
+```
