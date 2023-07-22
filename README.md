@@ -29,3 +29,9 @@ go get github.com/stretchr/testify@v1.7.0
 ```bash
 go test ./...
 ```
+
+### para gerar mocks de product.go
+
+```bash
+mockgen -destination=application/mocks/application.go -source=application/product.go application/
+```
