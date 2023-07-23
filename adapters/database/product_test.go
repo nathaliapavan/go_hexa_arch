@@ -3,7 +3,7 @@ package database_test
 import (
 	"database/sql"
 	"github.com/nathaliapavan/go_hexa_arch/adapters/database"
-	// "github.com/nathaliapavan/go_hexa_arch/application"
+	"github.com/nathaliapavan/go_hexa_arch/application"
 	"github.com/stretchr/testify/require"
 	"log"
 	"testing"
@@ -50,4 +50,26 @@ func TestProductDatabase_Get(t *testing.T) {
 	require.Equal(t, "Product Test", product.GetName())
 	require.Equal(t, 0.0, product.GetPrice())
 	require.Equal(t, "disabled", product.GetStatus())
+}
+
+func TestProductDatabase_Save(t *testing.T) {
+	setUp()
+	defer Database.Close()
+	productDatabase := database.NewProductDatabase(Database)
+
+	product := application.NewProduct()
+	product.Name = "Product Test"
+	product.Price = 50
+	productResult, err := productDatabase.Save(product)
+	require.Nil(t, err)
+	require.Equal(t, product.Name, productResult.GetName())
+	require.Equal(t, product.Price, productResult.GetPrice())
+	require.Equal(t, product.Status, productResult.GetStatus())
+
+	product.Status = "enabled"
+	productResult, err = productDatabase.Save(product)
+	require.Nil(t, err)
+	require.Equal(t, product.Name, productResult.GetName())
+	require.Equal(t, product.Price, productResult.GetPrice())
+	require.Equal(t, product.Status, productResult.GetStatus())
 }
