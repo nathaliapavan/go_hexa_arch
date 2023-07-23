@@ -47,13 +47,13 @@ apt-get install sqlite3
 ### para criar o banco sqlite3
 
 ```bash
-touch sqlite.db
+touch db.sqlite
 ```
 
 ### para acessar o banco sqlite3
 
 ```bash
-sqlite3 sqlite.db
+sqlite3 db.sqlite
 ```
 
 ### para criar uma tabela no banco sqlite3
