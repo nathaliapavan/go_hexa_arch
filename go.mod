@@ -7,5 +7,7 @@ require (
 	github.com/golang/mock v1.6.0 // indirect
 	github.com/mattn/go-sqlite3 v1.14.7 // indirect
 	github.com/satori/go.uuid v1.2.0 // indirect
+	github.com/spf13/cobra v1.7.0 // indirect
 	github.com/stretchr/testify v1.7.0 // indirect
+	gopkg.in/yaml.v2 v2.4.0 // indirect
 )

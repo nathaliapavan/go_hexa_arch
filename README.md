@@ -67,3 +67,33 @@ create table products(id string, name string, price float, status string);
 ```bash
 .tables
 ```
+
+### iniciar cobra-cli
+
+```bash
+cobra-cli init
+```
+
+### criar novo comando
+
+```bash
+cobra-cli add NAME-CMD
+```
+
+### executar comando
+
+```bash
+go run main.go NAME-CMD
+```
+
+### buscar produto pelo id no cli
+
+```bash
+go run main.go cli -a=get --id=PRODUCT_ID
+```
+
+### criar produto no cli
+
+```bash
+go run main.go cli -a=create -n="Product CLI" -p=25.0
+```
